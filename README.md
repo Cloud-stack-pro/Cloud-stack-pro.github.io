@@ -1,2 +1,1 @@
-## Cloud stack pro
-- Fontawesome ([repository](/fontawesome))
+- Fontawesome ([Link](/fontawesome))
