@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TimeLog</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body onload="runTime()">
+  <div id="dateTime"></div>
+  <div id="clock"></div>
+  <div id="timing"></div>
+<style>
+body {
+  background: black;
+  padding: 0;
+  margin: 0;
+  color: #17D4FE;
+  font-family: Orbitron;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative
+}
+#dateTime {
+  position: absolute;
+  right: 1rem;
+  top: 1rem
+}
+#timing {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem
+}
+#clock {
+  letter-spacing: 7px;
+  font-size: 3rem;
+  text-align: center
+}
+</style>
+<script>
+function runTime() {
+  const time = new Date( new Date().getTime() );
+  dateTime.innerText = time.toLocaleDateString("th-TH", {
+    timeZone:"Asia/Bangkok",year:"numeric",month:"2-digit",day:"2-digit"
+  })
+  clock.innerText = time.toLocaleTimeString("th-TH", {
+    timeZone:"Asia/Bangkok"
+  })
+  timing.innerText = time.getTime()
+  setTimeout(runTime, 1000)
+}
+</script>
+</body>
+</html>
