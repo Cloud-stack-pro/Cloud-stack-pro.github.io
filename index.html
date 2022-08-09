@@ -48,12 +48,14 @@ body {
 <script>
 function runTime() {
   const time = new Date( new Date().getTime() );
-  dateTime.innerText = time.toLocaleDateString("th-TH", {
+  const dt = time.toLocaleDateString("th-TH", {
     timeZone:"Asia/Bangkok",year:"numeric",month:"2-digit",day:"2-digit"
   })
-  clock.innerText = time.toLocaleTimeString("th-TH", {
+  dateTime.innerText != dt && (dateTime.innerText = dt)
+  const ct = time.toLocaleTimeString("th-TH", {
     timeZone:"Asia/Bangkok"
   })
+  clock.innerText != ct && (clock.innerText = ct)
   timing.innerText = time.getTime()
   setTimeout(runTime, 9)
 }
